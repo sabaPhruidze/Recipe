@@ -12,11 +12,16 @@ export default function App() {
         <SafeAreaView>
           <MenuBar>
             <Back>
-              <AntDesign name="arrowleft" size={24} color="#000" />
+              <AntDesign name="arrowleft" size={24} color="#fff" />
               <Text style={{ marginLeft: 10 }}>Ingredients</Text>
             </Back>
-            <AntDesign name="heart" size={24} color="#000" />
+            <AntDesign name="heart" size={24} color="#fff" />
           </MenuBar>
+          <MainRecipe>
+            <Text>Spicy Shrimp</Text>
+            <Text>80 calories per 100g</Text>
+            <Text>3g fat | 10g protein | 8g carbs</Text>
+          </MainRecipe>
         </SafeAreaView>
       </RecipeBackground>
     </Container>
@@ -31,12 +36,10 @@ const Container = styled.View`
 
 const RecipeBackground = styled.ImageBackground`
   width: 100%;
-  height: 100px;
 `;
 
 const Text = styled.Text`
-  /* color: ${(props) => (props.dark ? "#000" : "#fff")};
-  font-family: "AvenirNext-Regular"; */
+  color: "white";
 `;
 
 const MenuBar = styled.View`
@@ -46,6 +49,18 @@ const MenuBar = styled.View`
 `;
 
 const Back = styled.View`
+  display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 20px;
+`;
+const MainRecipe = styled.View`
+  padding: 0 32px;
+  margin: 200px 0 32px 0;
+`;
+const Divider = styled.View`
+  border-bottom-color: #fff;
+  border-bottom-width: 2px;
+  width: 150px;
+  margin: 8px 0;
 `;
