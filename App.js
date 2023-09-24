@@ -8,25 +8,28 @@ export default function App() {
   return (
     <Container>
       <StatusBar style="light" />
-      <RecipeBackground source={require("./assets/main.jpg")} />
-      <SafeAreaView>
-        <MenuBar>
-          <Back>
-            <AntDesign name="arrowleft" size={24} color="#000" />
-            <Text>Ingredients</Text>
-          </Back>
-        </MenuBar>
-      </SafeAreaView>
+      <RecipeBackground source={require("./assets/main.jpg")}>
+        <SafeAreaView>
+          <MenuBar>
+            <Back>
+              <AntDesign name="arrowleft" size={24} color="#000" />
+              <Text style={{ marginLeft: 10 }}>Ingredients</Text>
+            </Back>
+            <AntDesign name="heart" size={24} color="#000" />
+          </MenuBar>
+        </SafeAreaView>
+      </RecipeBackground>
     </Container>
   );
 }
 
 const Container = styled.View`
+  display: flex;
   flex: 1;
   background-color: #fff;
 `;
 
-const RecipeBackground = styled.Image`
+const RecipeBackground = styled.ImageBackground`
   width: 100%;
   height: 100px;
 `;
