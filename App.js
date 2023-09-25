@@ -19,6 +19,7 @@ export default function App() {
           </MenuBar>
           <MainRecipe>
             <Text>Spicy Shrimp</Text>
+            <Divider />
             <Text>80 calories per 100g</Text>
             <Text>3g fat | 10g protein | 8g carbs</Text>
           </MainRecipe>
@@ -39,7 +40,7 @@ const RecipeBackground = styled.ImageBackground`
 `;
 
 const Text = styled.Text`
-  color: "white";
+  color: white;
 `;
 
 const MenuBar = styled.View`
