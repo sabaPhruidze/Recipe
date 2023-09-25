@@ -5,6 +5,23 @@ import styled from "styled-components";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function App() {
+  const recipes = [
+    {
+      name: "Pad Thai",
+      info: "45 min | 2 servings",
+      image: require("./assets/PadThai.jpg"),
+    },
+    {
+      name: "Seared Scallops with Romesco Sauce",
+      info: "20 min | 4 servings",
+      image: require("./assets/scallops.jpg"),
+    },
+    {
+      name: "Grilled Chicken with Lemon Butter",
+      info: "60 min | 2 servings",
+      image: require("./assets/LemonChicken.jpg"),
+    },
+  ];
   return (
     <Container>
       <StatusBar style="light" />
@@ -32,6 +49,29 @@ export default function App() {
           </Button>
         </SafeAreaView>
       </RecipeBackground>
+      <RecipesContainer>
+        <Text dark heavy large>
+          Recipes
+        </Text>
+        <Text dark small>
+          18 recipes available
+        </Text>
+        <Recipes>
+          {recipes.map((data, idx) => (
+            <Recipe key={idx}>
+              <RecipeImage source={data.image} />
+              <RecipeInfo>
+                <Text dark bold>
+                  {data.name}
+                </Text>
+                <Text dark small>
+                  {data.info}
+                </Text>
+              </RecipeInfo>
+            </Recipe>
+          ))}
+        </Recipes>
+      </RecipesContainer>
     </Container>
   );
 }
@@ -47,8 +87,9 @@ const RecipeBackground = styled.ImageBackground`
 `;
 
 const Text = styled.Text`
-  color: white;
-
+  color: ${({ dark }) => {
+    return dark ? "#000" : "#FFF";
+  }};
   ${({ title, large, small }) => {
     switch (true) {
       case title:
@@ -106,3 +147,17 @@ const Button = styled.TouchableOpacity`
   padding: 6px 18px;
   border-radius: 100px;
 `;
+const RecipesContainer = styled.View`
+  margin-top: -24px;
+  padding: 32px;
+  background-color: #fff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+`;
+const Recipes = styled.View`
+  margin-top: 16px;
+`;
+const Recipe = styled.View``;
+const RecipeImage = styled.Image``;
+
+const RecipeInfo = styled.View``;
