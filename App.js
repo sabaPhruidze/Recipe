@@ -25,6 +25,11 @@ export default function App() {
             <Text bold>80 calories per 100g</Text>
             <Text>3g fat | 10g protein | 8g carbs</Text>
           </MainRecipe>
+          <Button>
+            <Text bold small>
+              LEARN MORE
+            </Text>
+          </Button>
         </SafeAreaView>
       </RecipeBackground>
     </Container>
@@ -93,4 +98,11 @@ const Divider = styled.View`
   border-bottom-width: 2px;
   width: 150px;
   margin: 8px 0;
+`;
+const Button = styled.TouchableOpacity`
+  margin: 0 0 48px 32px;
+  background-color: rgba(255, 255, 255, 0.3);
+  align-self: flex-start;
+  padding: 6px 18px;
+  border-radius: 100px;
 `;
