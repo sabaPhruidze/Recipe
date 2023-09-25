@@ -18,9 +18,11 @@ export default function App() {
             <AntDesign name="heart" size={24} color="#fff" />
           </MenuBar>
           <MainRecipe>
-            <Text>Spicy Shrimp</Text>
+            <Text title heavy>
+              Spicy Shrimp
+            </Text>
             <Divider />
-            <Text>80 calories per 100g</Text>
+            <Text bold>80 calories per 100g</Text>
             <Text>3g fat | 10g protein | 8g carbs</Text>
           </MainRecipe>
         </SafeAreaView>
@@ -41,6 +43,33 @@ const RecipeBackground = styled.ImageBackground`
 
 const Text = styled.Text`
   color: white;
+
+  ${({ title, large, small }) => {
+    switch (true) {
+      case title:
+        return "font-size:32px";
+        break;
+      case large:
+        return "font-size:20px";
+        break;
+      case small:
+        return "font-size:13px";
+        break;
+      default:
+        return "font-size:13px";
+        break;
+    }
+  }};
+  ${({ bold, heavy }) => {
+    switch (true) {
+      case bold:
+        return `font-weight:600`;
+        break;
+      case heavy:
+        return `font-weight:700`;
+        break;
+    }
+  }}
 `;
 
 const MenuBar = styled.View`
