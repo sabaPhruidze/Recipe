@@ -47,13 +47,13 @@ const MenuBar = styled.View`
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
+  margin-top: 20px;
 `;
 
 const Back = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
 `;
 const MainRecipe = styled.View`
   padding: 0 32px;
